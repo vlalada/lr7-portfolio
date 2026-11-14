@@ -1,0 +1,712 @@
+/* ==================================
+   ОБЩИЕ НАСТРОЙКИ
+================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #F7F5F0;
+    color: #242424;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 500;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 2px solid #C57A9C;
+    outline-offset: 5px;
+}
+
+
+/* ==================================
+   ЗАКРЕПЛЁННАЯ ШАПКА
+================================== */
+
+.hero-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    min-height: 68px;
+    padding: 18px clamp(24px, 4vw, 68px);
+    background-color: #F7F5F0;
+    border-bottom: 1px solid #E5E2DC;
+}
+
+.hero-top h1 {
+    margin: 0;
+    font-size: clamp(17px, 1.7vw, 25px);
+}
+
+.hero-top a {
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.hero-top a:hover,
+#skills a:hover,
+.text-link:hover {
+    color: #C57A9C;
+}
+
+
+/* ==================================
+   ПЕРВЫЙ ЭКРАН
+================================== */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    min-height: min(820px, 100svh);
+    padding: 94px clamp(24px, 4vw, 68px) 34px;
+    border-bottom: 1px solid #E5E2DC;
+    overflow: hidden;
+}
+
+.hero-art {
+    position: relative;
+    flex: 1;
+    min-height: 420px;
+}
+
+/* Крупное имя на заднем плане */
+.hero-back-name {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #171717;
+    font-size: clamp(65px, 9.2vw, 160px);
+    font-weight: 500;
+    line-height: 0.8;
+    letter-spacing: -0.095em;
+    white-space: nowrap;
+}
+
+/* Рукописные слова по сторонам */
+.hero-script {
+    position: absolute;
+    z-index: 2;
+    color: #C57A9C;
+    font-family: 'Marck Script', cursive;
+    font-size: clamp(48px, 7.2vw, 120px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+.hero-script-left {
+    top: 43%;
+    left: 8%;
+}
+
+.hero-script-right {
+    top: 44%;
+    right: 5%;
+}
+
+/* Вертикальный ряд розовых кристаллов */
+.crystal-stack {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+
+.crystal-stack img {
+    display: block;
+    width: clamp(108px, 14vw, 218px);
+    height: auto;
+    filter: drop-shadow(0 11px 13px rgba(95, 47, 66, 0.15));
+}
+
+.crystal-stack img + img {
+    margin-top: -16px;
+}
+
+.crystal-stack img:nth-child(2) {
+    transform: rotate(63deg) scale(0.96);
+}
+
+.crystal-stack img:nth-child(3) {
+    transform: rotate(-28deg) scale(0.93);
+}
+
+/* Должность и первый абзац */
+.hero-bottom {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 32px;
+}
+
+.hero-bottom h2 {
+    flex: 0 0 43%;
+    margin: 0;
+    font-size: clamp(27px, 3.4vw, 52px);
+}
+
+.hero-bottom p {
+    width: min(45%, 585px);
+    margin: 0;
+    font-size: clamp(15px, 1.3vw, 18px);
+}
+
+
+/* ==================================
+   ОБЩИЕ СТИЛИ РАЗДЕЛОВ
+================================== */
+
+.content-section {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 96px clamp(24px, 4vw, 68px);
+    scroll-margin-top: 70px;
+}
+
+.content-section h2,
+#contacts h2 {
+    margin: 0;
+    font-size: clamp(32px, 3.5vw, 52px);
+}
+
+.content-section p,
+#contacts p {
+    font-size: 18px;
+}
+
+
+/* ==================================
+   ВТОРОЙ ЭКРАН — ОБО МНЕ И НАВЫКИ
+================================== */
+
+#skills {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 760px;
+    border-bottom: 1px solid #E5E2DC;
+}
+
+.skills-center {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    text-align: center;
+}
+
+.skills-center h2 {
+    margin-bottom: 28px;
+}
+
+.skills-center p {
+    margin: 0;
+    font-size: clamp(23px, 2.5vw, 32px);
+}
+
+.skills-center a {
+    text-underline-offset: 5px;
+}
+
+/* Четыре заметки с навыками */
+.skill-notes {
+    position: absolute;
+    inset: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.skill-note {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    min-height: 155px;
+    padding: 28px 23px;
+    background-color: #FFF7C9;
+    box-shadow: 0 12px 25px rgba(80, 65, 45, 0.12);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Синие кнопки-скрепки на заметках */
+.skill-note::before {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 19px;
+    height: 19px;
+    border: 3px solid #B9D5E3;
+    border-radius: 50%;
+    background-color: #659DB9;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+    content: '';
+}
+
+.skill-note-one {
+    top: 9%;
+    left: 5%;
+    transform: rotate(-7deg);
+}
+
+.skill-note-two {
+    top: 10%;
+    right: 5%;
+    background-color: #D7EAF1;
+    transform: rotate(6deg);
+}
+
+.skill-note-three {
+    bottom: 8%;
+    left: 7%;
+    background-color: #D7EAF1;
+    transform: rotate(6deg);
+}
+
+.skill-note-four {
+    right: 6%;
+    bottom: 8%;
+    transform: rotate(-7deg);
+}
+
+/* Графика курсоров из папки Reel Studio */
+.skills-decoration img {
+    position: absolute;
+    z-index: 1;
+    height: auto;
+}
+
+.cursor-motion {
+    top: 33%;
+    left: 11%;
+    width: 113px;
+}
+
+.cursor-animation {
+    top: 30%;
+    right: 10%;
+    width: 141px;
+}
+
+.cursor-editing {
+    right: 19%;
+    bottom: 18%;
+    width: 113px;
+}
+
+/* ==================================
+   МОИ ПРОЕКТЫ
+================================== */
+
+#projects {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding-top: 110px;
+    padding-bottom: 70px;
+}
+
+.project-case {
+    min-width: 0;
+    margin: 0;
+}
+
+.project-image {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-image-flexo {
+    background-color: #4B3028;
+}
+
+.project-image-planirovok {
+    background-color: #211B18;
+}
+
+.project-case figcaption {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.projects-center {
+    text-align: center;
+}
+
+.projects-center h2 {
+    margin-bottom: 28px;
+}
+
+.projects-center p {
+    max-width: 430px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+}
+
+.project-line {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 55px 0 0;
+    padding: 28px 0 0;
+    border-top: 1px solid #E5E2DC;
+    list-style: none;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.project-crystal img {
+    display: block;
+    width: 27px;
+    height: 27px;
+}
+
+.text-link {
+    display: inline-block;
+    font-weight: 500;
+    text-underline-offset: 5px;
+}
+
+
+/* ==================================
+   КОНТАКТЫ
+================================== */
+
+#contacts {
+    padding: 90px clamp(24px, 4vw, 68px) 40px;
+    background-color: #242424;
+    color: #FFFFFF;
+    scroll-margin-top: 70px;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1244px;
+    margin: 0 auto;
+}
+
+.footer-inner p {
+    max-width: 600px;
+    margin: 0 0 25px;
+    color: #D0CECA;
+}
+
+.footer-inner a {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.footer-inner a:hover {
+    color: #E5B6CB;
+}
+
+#contacts .copyright {
+    max-width: 1244px;
+    margin: 100px auto 0;
+    color: #999590;
+    font-size: 13px;
+}
+
+
+/* ==================================
+   АДАПТАЦИЯ ПОД ПЛАНШЕТЫ
+================================== */
+
+@media (max-width: 900px) {
+    #about {
+        min-height: 780px;
+    }
+
+    .hero-back-name {
+        font-size: 9.3vw;
+    }
+
+    .hero-script-left {
+        left: 2%;
+    }
+
+    .hero-script-right {
+        right: 1%;
+    }
+
+    .hero-bottom h2 {
+        flex-basis: 38%;
+    }
+
+    .hero-bottom p {
+        width: 52%;
+    }
+
+    #skills {
+        min-height: 820px;
+    }
+
+    .skills-center {
+        max-width: 560px;
+    }
+
+    .skill-note {
+        width: 205px;
+        min-height: 140px;
+        font-size: 16px;
+    }
+
+    #projects {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects-center {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        margin-bottom: 24px;
+    }
+}
+
+
+/* ==================================
+   АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ
+================================== */
+
+@media (max-width: 600px) {
+    #about {
+        min-height: 100svh;
+        padding: 88px 20px 28px;
+    }
+
+    .hero-top {
+        gap: 12px;
+        min-height: 70px;
+        padding: 16px 20px;
+    }
+
+    .hero-top h1 {
+        max-width: 145px;
+        font-size: 17px;
+    }
+
+    .hero-top a {
+        font-size: 12px;
+    }
+
+    .hero-art {
+        min-height: 350px;
+    }
+
+    .hero-back-name {
+        top: 46%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-size: clamp(53px, 13.5vw, 82px);
+    }
+
+    .hero-script {
+        font-size: clamp(38px, 11vw, 60px);
+    }
+
+    .hero-script-left {
+        top: 27%;
+        left: 3%;
+    }
+
+    .hero-script-right {
+        top: 58%;
+        right: 2%;
+    }
+
+    .crystal-stack {
+        top: 46%;
+    }
+
+    .crystal-stack img {
+        width: clamp(104px, 29vw, 150px);
+    }
+
+    .crystal-stack img + img {
+        margin-top: -7px;
+    }
+
+    .hero-bottom {
+        display: block;
+    }
+
+    .hero-bottom h2 {
+        margin-bottom: 18px;
+        font-size: clamp(28px, 8vw, 42px);
+    }
+
+    .hero-bottom p {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .content-section {
+        padding: 70px 24px;
+    }
+
+    #skills {
+        display: block;
+        min-height: 0;
+    }
+
+    .skills-center {
+        margin: 0 auto 74px;
+    }
+
+    .skills-center h2 {
+        margin-bottom: 25px;
+    }
+
+    .skills-center p {
+        font-size: 23px;
+    }
+
+    .skill-notes {
+        position: static;
+        display: grid;
+        gap: 35px;
+    }
+
+    .skill-note {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        width: min(82%, 300px);
+        min-height: 125px;
+        margin: 0;
+        font-size: 17px;
+    }
+
+    .skill-note:nth-child(even) {
+        margin-left: auto;
+    }
+
+    .skills-decoration {
+        display: none;
+    }
+
+    .footer-inner {
+        display: block;
+    }
+
+    #projects {
+        gap: 18px;
+        padding-top: 75px;
+        padding-bottom: 55px;
+    }
+
+    .projects-center {
+        margin-bottom: 20px;
+    }
+
+    .projects-center h2 {
+        margin-bottom: 20px;
+    }
+
+    .project-case figcaption {
+        font-size: 12px;
+    }
+
+    .project-line {
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 25px;
+        font-size: 15px;
+    }
+
+    .project-crystal img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #contacts {
+        padding: 70px 24px 40px;
+    }
+
+    #contacts h2 {
+        margin-bottom: 32px;
+    }
+
+    .footer-inner a {
+        font-size: 17px;
+    }
+
+    #contacts .copyright {
+        margin-top: 80px;
+    }
+}
+
+
+/* ==================================
+   НАСТРОЙКИ ДОСТУПНОСТИ
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+}
