@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Владислава Рыльскова — бренд-архитектор. Сайты, айдентика и комплексная упаковка брендов.">
-  <title>Владислава Рыльскова — бренд-архитектор</title>
+  <meta name="description" content="Бренд-архитектор Владислава Рыльскова создаёт сайты, айдентику и визуальную упаковку брендов. Узнайте о подходе, проектах и возможностях сотрудничества.">
+  <title>Бренд-архитектор Владислава Рыльскова — сайты и айдентика</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Marck+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/site.js" defer></script>
 </head>
 <body>
   <header class="hero-top">
-        <h1 id="hero-name">Владислава Рыльскова</h1>
-        <a href="https://rylskovavladislava.ru" target="_blank" rel="noopener noreferrer">Основной сайт <span aria-hidden="true">↗</span></a>
+    <a class="site-name" href="index.html">Владислава Рыльскова</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
+    <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+      <a href="index.html" aria-current="page">Главная</a>
+      <a href="about.html">Обо мне</a>
+      <a href="projects.html">Проекты</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
   </header>
   <main>
     <section id="about" aria-labelledby="hero-name">
@@ -22,13 +29,13 @@
         <span class="hero-script hero-script-left">бренд</span>
         <span class="hero-script hero-script-right">архитектор</span>
         <div class="crystal-stack">
-          <img src="assets/pink-glass-disc.png" alt="" width="610" height="607">
-          <img src="assets/pink-glass-disc.png" alt="" width="610" height="607">
-          <img src="assets/pink-glass-disc.png" alt="" width="610" height="607">
+          <img src="images/pink-glass-disc.png" alt="" width="610" height="607">
+          <img src="images/pink-glass-disc.png" alt="" width="610" height="607">
+          <img src="images/pink-glass-disc.png" alt="" width="610" height="607">
         </div>
       </div>
       <div class="hero-bottom">
-        <h2>Бренд-архитектор</h2>
+        <h1 id="hero-name">Бренд-архитектор</h1>
         <p>Занимаюсь созданием сайтов, разработкой айдентики и комплексной упаковкой брендов. Помогаю бизнесу выстраивать целостный визуальный образ и находить эффективные решения для развития.</p>
       </div>
     </section>
@@ -44,36 +51,36 @@
         <li class="skill-note skill-note-four">Анализ бренда и разработка дизайн-концепций</li>
       </ul>
       <div class="skills-decoration" aria-hidden="true">
-        <img class="cursor-motion" src="assets/cursor-motion.png" alt="" width="113" height="60">
-        <img class="cursor-animation" src="assets/cursor-animation.png" alt="" width="141" height="60">
-        <img class="cursor-editing" src="assets/cursor-editing.png" alt="" width="113" height="59">
+        <img class="cursor-motion" src="images/cursor-motion.png" alt="" width="113" height="60">
+        <img class="cursor-animation" src="images/cursor-animation.png" alt="" width="141" height="60">
+        <img class="cursor-editing" src="images/cursor-editing.png" alt="" width="113" height="59">
       </div>
     </section>
     <section id="projects" class="content-section" aria-labelledby="projects-title">
       <figure class="project-case project-case-left">
         <div class="project-image project-image-flexo">
-          <img src="assets/flexo-case.png" alt="Главный экран сайта Flexo" width="705" height="396" loading="lazy">
+          <img src="images/flexo-case.png" alt="Главный экран сайта Flexo" width="705" height="396" loading="lazy">
         </div>
         <figcaption>Flexo</figcaption>
       </figure>
       <div class="projects-center">
         <h2 id="projects-title">Мои проекты</h2>
         <p>Разрабатываю визуальные решения для бизнеса: от фирменного стиля до полноценных сайтов.</p>
-        <a class="text-link" href="https://rylskovavladislava.ru" target="_blank" rel="noopener noreferrer">Посмотреть все проекты ↗</a>
+        <a class="text-link" href="projects.html">Подробнее о проектах →</a>
       </div>
       <figure class="project-case project-case-right">
         <div class="project-image project-image-planirovok">
-          <img src="assets/planirovok-case.png" alt="Главный экран сайта «Мастерская Планировок»" width="706" height="397" loading="lazy">
+          <img src="images/planirovok-case.png" alt="Главный экран сайта «Мастерская Планировок»" width="706" height="397" loading="lazy">
         </div>
         <figcaption>Мастерская Планировок</figcaption>
       </figure>
       <ul class="project-line" aria-label="Проекты">
         <li>MARAFETTE</li>
-        <li class="project-crystal" aria-hidden="true"><img src="assets/pink-glass-disc.png" alt="" width="32" height="32"></li>
+        <li class="project-crystal" aria-hidden="true"><img src="images/pink-glass-disc.png" alt="" width="32" height="32"></li>
         <li>Лотос</li>
-        <li class="project-crystal" aria-hidden="true"><img src="assets/pink-glass-disc.png" alt="" width="32" height="32"></li>
+        <li class="project-crystal" aria-hidden="true"><img src="images/pink-glass-disc.png" alt="" width="32" height="32"></li>
         <li>Мастерская Планировок</li>
-        <li class="project-crystal" aria-hidden="true"><img src="assets/pink-glass-disc.png" alt="" width="32" height="32"></li>
+        <li class="project-crystal" aria-hidden="true"><img src="images/pink-glass-disc.png" alt="" width="32" height="32"></li>
         <li>Flexo</li>
       </ul>
     </section>
