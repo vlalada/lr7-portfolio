@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Denistina';
+    src: url('../fonts/denistina_en.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+:root {
+    --page-gutter: clamp(24px, 5vw, 88px);
+}
+
 /* ==================================
    ОБЩИЕ НАСТРОЙКИ
 ================================== */
@@ -54,7 +66,7 @@ a:focus-visible {
     align-items: center;
     gap: 32px;
     min-height: 68px;
-    padding: 18px clamp(24px, 4vw, 68px);
+    padding: 18px var(--page-gutter);
     background-color: #F7F5F0;
     border-bottom: 1px solid #E5E2DC;
 }
@@ -102,7 +114,7 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     min-height: min(820px, 100svh);
-    padding: 94px clamp(24px, 4vw, 68px) 34px;
+    padding: 94px var(--page-gutter) 34px;
     border-bottom: 1px solid #E5E2DC;
     overflow: hidden;
 }
@@ -132,10 +144,10 @@ a:focus-visible {
     position: absolute;
     z-index: 2;
     color: #C57A9C;
-    font-family: 'Marck Script', cursive;
+    font-family: 'Denistina', cursive;
     font-size: clamp(48px, 7.2vw, 120px);
     line-height: 1;
-    letter-spacing: -0.035em;
+    letter-spacing: 0;
 }
 
 .hero-script-left {
@@ -157,18 +169,15 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     align-items: center;
+    row-gap: clamp(30px, 3vw, 42px);
     transform: translate(-50%, -50%);
 }
 
 .crystal-stack img {
     display: block;
-    width: clamp(108px, 14vw, 218px);
+    width: clamp(90px, 10vw, 150px);
     height: auto;
     filter: drop-shadow(0 11px 13px rgba(95, 47, 66, 0.15));
-}
-
-.crystal-stack img + img {
-    margin-top: -16px;
 }
 
 .crystal-stack img:nth-child(2) {
@@ -207,9 +216,9 @@ a:focus-visible {
 ================================== */
 
 .content-section {
-    max-width: 1380px;
+    max-width: none;
     margin: 0 auto;
-    padding: 96px clamp(24px, 4vw, 68px);
+    padding: 96px var(--page-gutter);
     scroll-margin-top: 70px;
 }
 
@@ -442,7 +451,7 @@ a:focus-visible {
 ================================== */
 
 #contacts {
-    padding: 90px clamp(24px, 4vw, 68px) 40px;
+    padding: 90px var(--page-gutter) 40px;
     background-color: #242424;
     color: #FFFFFF;
     scroll-margin-top: 70px;
@@ -452,7 +461,7 @@ a:focus-visible {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    max-width: 1244px;
+    max-width: none;
     margin: 0 auto;
 }
 
@@ -476,7 +485,7 @@ a:focus-visible {
 }
 
 #contacts .copyright {
-    max-width: 1244px;
+    max-width: none;
     margin: 100px auto 0;
     color: #999590;
     font-size: 13px;
@@ -545,13 +554,13 @@ a:focus-visible {
 @media (max-width: 600px) {
     #about {
         min-height: 100svh;
-        padding: 88px 20px 28px;
+        padding: 88px var(--page-gutter) 28px;
     }
 
     .hero-top {
         gap: 12px;
         min-height: 70px;
-        padding: 16px 20px;
+        padding: 16px var(--page-gutter);
     }
 
     .hero-top .site-name {
@@ -580,7 +589,7 @@ a:focus-visible {
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 12px 20px 18px;
+        padding: 12px var(--page-gutter) 18px;
         background: #F7F5F0;
         border-bottom: 1px solid #E5E2DC;
         box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
@@ -626,11 +635,7 @@ a:focus-visible {
     }
 
     .crystal-stack img {
-        width: clamp(104px, 29vw, 150px);
-    }
-
-    .crystal-stack img + img {
-        margin-top: -7px;
+        width: clamp(76px, 22vw, 100px);
     }
 
     .hero-bottom {
@@ -648,7 +653,7 @@ a:focus-visible {
     }
 
     .content-section {
-        padding: 70px 24px;
+        padding: 70px var(--page-gutter);
     }
 
     #skills {
@@ -729,7 +734,7 @@ a:focus-visible {
     }
 
     #contacts {
-        padding: 70px 24px 40px;
+        padding: 70px var(--page-gutter) 40px;
     }
 
     #contacts h2 {
@@ -759,25 +764,26 @@ a:focus-visible {
 
 /* Внутренние страницы */
 .inner-page {
-    max-width: 1244px;
+    max-width: none;
     min-height: calc(100svh - 68px);
     margin: 0 auto;
-    padding: 150px clamp(24px, 4vw, 68px) 100px;
+    padding: 150px var(--page-gutter) 100px;
     line-height: 1.5;
     letter-spacing: -0.025em;
 }
 
 .page-eyebrow {
-    margin: 0 0 18px;
+    margin: 0 0 10px;
     color: #A75F81;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-family: 'Denistina', cursive;
+    font-size: clamp(34px, 3.8vw, 54px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0;
 }
 
 .inner-page h1 {
-    max-width: 850px;
+    max-width: none;
     margin: 0 0 28px;
     font-size: clamp(42px, 6vw, 84px);
     line-height: 1.02;
@@ -875,7 +881,7 @@ a:focus-visible {
 }
 
 .page-footer {
-    padding: 32px clamp(24px, 4vw, 68px);
+    padding: 32px var(--page-gutter);
     border-top: 1px solid #E5E2DC;
     color: #77736E;
     font-size: 14px;
@@ -887,7 +893,7 @@ a:focus-visible {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    max-width: 1244px;
+    max-width: none;
     margin: 0 auto;
 }
 
@@ -895,9 +901,145 @@ a:focus-visible {
     color: inherit;
 }
 
+/* Страница «Обо мне»: заметки и направления работы */
+.about-page h1 {
+    font-size: clamp(38px, 5vw, 72px);
+}
+
+.about-page h1 span {
+    display: block;
+}
+
+.about-page .page-grid {
+    gap: clamp(28px, 4vw, 64px);
+    padding: 24px 12px;
+}
+
+.about-page .info-card {
+    position: relative;
+    min-height: 260px;
+    padding: 44px 38px 36px;
+    border: 0;
+    border-radius: 0;
+    background: #FFF7C9;
+    box-shadow: 0 12px 25px rgba(80, 65, 45, 0.12);
+    transform: rotate(-2deg);
+}
+
+.about-page .info-card:nth-child(2) {
+    background: #D7EAF1;
+    transform: rotate(2deg);
+}
+
+.about-page .info-card::before {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 19px;
+    height: 19px;
+    border: 3px solid #B9D5E3;
+    border-radius: 50%;
+    background: #659DB9;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+    content: '';
+}
+
+.about-page .services-section {
+    margin-top: 90px;
+    padding: clamp(46px, 5vw, 78px) 18px 18px;
+    border-radius: 18px;
+    background: #171717;
+    color: #fff;
+    text-align: center;
+}
+
+.services-section > h2 {
+    max-width: 800px;
+    margin: 0 auto 48px;
+    font-size: clamp(35px, 4vw, 58px);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    text-align: left;
+}
+
+.service-card {
+    display: flex;
+    min-height: 245px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(22px, 2vw, 32px);
+    border-radius: 12px;
+    background: #FFFEFB;
+    color: #242424;
+}
+
+.service-number {
+    margin-bottom: 30px;
+    font-size: clamp(32px, 3vw, 46px);
+    font-weight: 500;
+    letter-spacing: -0.06em;
+}
+
+.service-card h3 {
+    margin: auto 0 10px;
+    font-size: clamp(20px, 1.7vw, 27px);
+    line-height: 1.1;
+}
+
+.service-card p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+}
+
+.services-link {
+    display: inline-block;
+    margin: 30px 0 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 700px) {
     .page-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-page h1 {
+        font-size: clamp(30px, 7vw, 44px);
+    }
+
+    .about-page .page-grid {
+        padding: 16px 6px;
+    }
+
+    .about-page .info-card {
+        min-height: 0;
+        padding: 40px 28px 30px;
+    }
+
+    .about-page .services-section {
+        margin-top: 62px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: 205px;
     }
 
     .inner-page {
